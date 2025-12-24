@@ -1,0 +1,118 @@
+# ===========================================
+# SafetyCare Monorepo - .dockerignore
+# ===========================================
+
+# -------------------------------------------
+# Version Control
+# -------------------------------------------
+.git
+.gitignore
+.gitattributes
+
+# -------------------------------------------
+# Documentation (not needed in containers)
+# -------------------------------------------
+*.md
+!README.md
+PROJECT_DOCUMENTATION.md
+CLAUDE.md
+docs/
+
+# -------------------------------------------
+# IDE & Editors
+# -------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# -------------------------------------------
+# OS Files
+# -------------------------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------------------------
+# Python (Backend)
+# -------------------------------------------
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+**/*.egg-info/
+**/dist/
+**/build/
+**/.eggs/
+
+# Virtual Environments
+**/.venv/
+**/venv/
+**/env/
+
+# Type Checking & Linting Caches
+**/.mypy_cache/
+**/.ruff_cache/
+**/.pytest_cache/
+
+# Coverage
+**/.coverage
+**/htmlcov/
+**/coverage.xml
+
+# Backend specific
+backend/.python-version
+backend/data/
+backend/.env
+
+# -------------------------------------------
+# Node.js (Frontend)
+# -------------------------------------------
+**/node_modules/
+
+# Next.js build artifacts
+frontend/.next/
+frontend/out/
+
+# Frontend specific
+frontend/.env.local
+frontend/.env.*.local
+
+# Logs
+**/*.log
+**/npm-debug.log*
+**/yarn-error.log*
+
+# -------------------------------------------
+# Certificates (mounted separately)
+# -------------------------------------------
+certs/*.crt
+certs/*.key
+certs/*.pem
+
+# -------------------------------------------
+# Claude Code
+# -------------------------------------------
+.claude/
+
+# -------------------------------------------
+# CI/CD & GitHub
+# -------------------------------------------
+.github/
+
+# -------------------------------------------
+# Tests (not needed in production image)
+# -------------------------------------------
+**/tests/
+**/test/
+**/*_test.py
+**/test_*.py
+**/conftest.py
+
+# -------------------------------------------
+# Development Files
+# -------------------------------------------
+Makefile
+docker-compose*.yml
+*.local
+*.bak
+*.tmp

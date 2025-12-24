@@ -1,0 +1,98 @@
+"""
+SafetyCare Core Module
+
+Contains security, exceptions, and dependency injection utilities.
+"""
+
+from safetycare.core.dependencies import (
+    CurrentUserDep,
+    PasswordManagerDep,
+    RequireAuthDep,
+    RTSPManagerDep,
+    SettingsDep,
+    TelegramNotifierDep,
+    get_app_settings,
+    get_current_user,
+    get_password_manager,
+    get_rtsp_manager,
+    get_telegram_notifier,
+    require_auth,
+)
+from safetycare.core.exceptions import (
+    AuthenticationError,
+    CameraAlreadyExistsError,
+    CameraConnectionError,
+    CameraError,
+    CameraNotFoundError,
+    CameraNotStreamingError,
+    CameraStreamError,
+    ConfigurationError,
+    DetectionError,
+    FrameProcessingError,
+    InvalidConfigurationError,
+    InvalidCredentialsError,
+    ModelLoadError,
+    SafetyCareError,
+    SetupNotCompleteError,
+    TelegramConnectionError,
+    TelegramError,
+    TelegramNotConfiguredError,
+    TelegramSendError,
+    TokenExpiredError,
+    TokenInvalidError,
+)
+from safetycare.core.security import (
+    PasswordManager,
+    create_access_token,
+    generate_secure_password,
+    get_or_create_jwt_secret,
+    hash_password,
+    verify_access_token,
+    verify_password,
+)
+
+__all__ = [
+    # Dependencies
+    "CurrentUserDep",
+    "PasswordManagerDep",
+    "RequireAuthDep",
+    "RTSPManagerDep",
+    "SettingsDep",
+    "TelegramNotifierDep",
+    "get_app_settings",
+    "get_current_user",
+    "get_password_manager",
+    "get_rtsp_manager",
+    "get_telegram_notifier",
+    "require_auth",
+    # Exceptions
+    "AuthenticationError",
+    "CameraAlreadyExistsError",
+    "CameraConnectionError",
+    "CameraError",
+    "CameraNotFoundError",
+    "CameraNotStreamingError",
+    "CameraStreamError",
+    "ConfigurationError",
+    "DetectionError",
+    "FrameProcessingError",
+    "InvalidConfigurationError",
+    "InvalidCredentialsError",
+    "ModelLoadError",
+    "SafetyCareError",
+    "SetupNotCompleteError",
+    "TelegramConnectionError",
+    "TelegramError",
+    "TelegramNotConfiguredError",
+    "TelegramSendError",
+    "TokenExpiredError",
+    "TokenInvalidError",
+    # Security
+    "PasswordManager",
+    "create_access_token",
+    "generate_secure_password",
+    "get_or_create_jwt_secret",
+    "hash_password",
+    "verify_access_token",
+    "verify_password",
+]

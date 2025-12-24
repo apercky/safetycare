@@ -1,0 +1,137 @@
+# ===========================================
+# SafetyCare Monorepo - .gitignore
+# ===========================================
+
+# -------------------------------------------
+# OS & System Files
+# -------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# -------------------------------------------
+# IDE & Editors
+# -------------------------------------------
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# -------------------------------------------
+# Python (Backend)
+# -------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Type Checking & Linting
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# -------------------------------------------
+# Node.js (Frontend)
+# -------------------------------------------
+node_modules/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+.turbo/
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -------------------------------------------
+# Environment & Secrets
+# -------------------------------------------
+.env.local
+.env.*.local
+*.local.env
+
+# Backend secrets (generated at runtime)
+backend/data/
+backend/yolov8n-pose.pt
+backend/models/*.task
+backend/models/*.pt
+
+# Frontend local overrides
+frontend/.env.local
+frontend/.env.*.local
+
+# -------------------------------------------
+# Certificates (generated, not committed)
+# -------------------------------------------
+certs/*.crt
+certs/*.key
+certs/*.pem
+certs/*.p12
+certs/*.pfx
+certs/*.srl
+
+# -------------------------------------------
+# Docker (local volumes, not committed)
+# -------------------------------------------
+docker-data/
+
+# -------------------------------------------
+# Claude Code
+# -------------------------------------------
+.claude/plans/
+
+# -------------------------------------------
+# Misc
+# -------------------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup

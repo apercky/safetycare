@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(ls:*)",
+      "Bash(du -sh:*)",
+      "Bash(cat:*)",
+      "Bash(tree:*)"
+    ]
+  }
+}
