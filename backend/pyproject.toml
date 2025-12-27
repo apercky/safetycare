@@ -1,14 +1,14 @@
 [project]
 name = "safetycare"
 version = "1.0.0"
-description = "Fall Detection System via IP Cam using MediaPipe and YOLOv8"
+description = "Fall Detection System via IP Cam using MediaPipe (Apache 2.0)"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.12"
 authors = [
     { name = "SafetyCare Team" }
 ]
-keywords = ["fall-detection", "computer-vision", "mediapipe", "yolov8", "fastapi"]
+keywords = ["fall-detection", "computer-vision", "mediapipe", "fastapi", "elderly-care"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Framework :: FastAPI",
@@ -30,7 +30,6 @@ dependencies = [
     "websockets>=15.0.0",
     "opencv-python-headless>=4.12.0",
     "mediapipe>=0.10.21",
-    "ultralytics>=8.3.0",
     "numpy>=2.2.0,<2.3.0",
     "pillow>=12.0.0",
     "structlog>=25.5.0",
@@ -102,7 +101,6 @@ plugins = ["pydantic.mypy"]
 module = [
     "cv2.*",
     "mediapipe.*",
-    "ultralytics.*",
 ]
 ignore_missing_imports = true
 

@@ -45,14 +45,16 @@ class Settings(BaseSettings):
     max_persons_per_frame: int = Field(default=5, ge=1, le=20)
 
     # MediaPipe
-    mediapipe_model_complexity: Literal[0, 1, 2] = 1
-    mediapipe_min_detection_confidence: float = 0.5
-    mediapipe_min_tracking_confidence: float = 0.5
-
-    # YOLO
-    yolo_model: str = "yolov8n-pose.pt"
-    yolo_device: str = "cpu"  # "cpu", "cuda", "mps"
-    yolo_imgsz: int = 640
+    mediapipe_model_complexity: Literal[0, 1, 2] = Field(
+        default=1,
+        description="0=Lite, 1=Full, 2=Heavy. Higher = more accurate but slower"
+    )
+    mediapipe_min_detection_confidence: float = Field(
+        default=0.5, ge=0.1, le=1.0, description="Minimum detection confidence"
+    )
+    mediapipe_min_tracking_confidence: float = Field(
+        default=0.5, ge=0.1, le=1.0, description="Minimum tracking confidence"
+    )
 
     # Streaming
     stream_quality: int = Field(default=80, ge=10, le=100, description="JPEG quality")

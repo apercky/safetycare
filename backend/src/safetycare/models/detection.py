@@ -52,7 +52,7 @@ class PoseLandmark(BaseModel):
 class PersonDetection(BaseModel):
     """Detection result for a single person."""
 
-    id: int = Field(description="Tracking ID within frame")
+    id: str = Field(description="Tracking ID (format: camera_id_person_N)")
     bbox: BoundingBox
     pose_landmarks: list[PoseLandmark] = Field(default_factory=list)
     state: PersonState = PersonState.UNKNOWN
@@ -68,7 +68,7 @@ class DetectionResult(BaseModel):
     frame_number: int = 0
     persons: list[PersonDetection] = Field(default_factory=list)
     fall_detected: bool = False
-    fall_person_ids: list[int] = Field(default_factory=list)
+    fall_person_ids: list[str] = Field(default_factory=list)
     processing_time_ms: float = 0.0
 
 
@@ -93,7 +93,7 @@ class AlertPayload(BaseModel):
     """Payload for fall alert."""
 
     type: Literal["fall_detected"] = "fall_detected"
-    person_id: int
+    person_id: str
     confidence: float
     frame_snapshot: str = Field(description="Base64 encoded JPEG snapshot")
 
